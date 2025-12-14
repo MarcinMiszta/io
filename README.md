@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# 🏪 Targowisko Miejskie - System Zarządzania
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+System zarządzania targowiskiem miejskim z trzema panelami użytkowników: Biuro, Kontroler i Sprzedawca.
 
-Currently, two official plugins are available:
+## 🚀 Uruchomienie projektu
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Wymagania
+- Node.js (v18+)
+- npm lub yarn
+- Git
 
-## React Compiler
+### Instalacja i uruchomienie
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# 1. Sklonuj repozytorium
+git clone https://github.com/twoj-username/targowisko-miejskie.git
 
-## Expanding the ESLint configuration
+# 2. Przejdź do folderu projektu
+cd targowisko-miejskie
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# 3. Zainstaluj zależności
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 4. Uruchom aplikację (frontend + backend)
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Aplikacja będzie dostępna pod adresem: **http://localhost:5173**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📋 Funkcjonalności
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Panel Biura (Office)
+- Dashboard z KPI i wykresami
+- Interaktywna mapa targowiska
+- Moduł kasjera do obsługi płatności
+- Raporty i statystyki
+
+### Panel Kontrolera
+- Mapa targowiska z podglądem stanowisk
+- Weryfikacja czystości stanowisk
+- Zgłaszanie i przeglądanie incydentów
+- Lista kontroli do wykonania
+
+### Panel Sprzedawcy/Klienta
+- Przeglądanie dostępnych stanowisk
+- Rezerwacja stanowisk
+- Historia rezerwacji
+- Płatności online
+
+## 🗂️ Struktura projektu
+
 ```
+io/
+├── server/           # Backend (Express.js + SQLite)
+│   └── index.js
+├── src/
+│   ├── components/   # Komponenty UI
+│   │   ├── layout/   # Layouty dla ról
+│   │   └── ui/       # Button, Card, Badge, Input
+│   ├── context/      # MarketContext (stan aplikacji)
+│   ├── pages/        # Strony aplikacji
+│   │   ├── controller/
+│   │   ├── office/
+│   │   └── seller/
+│   ├── styles/       # Style globalne
+│   └── types/        # Definicje TypeScript
+├── package.json
+└── README.md
+```
+
+## 🛠️ Technologie
+
+- **Frontend**: React 18, TypeScript, Vite
+- **Backend**: Express.js, SQLite (better-sqlite3)
+- **Wykresy**: Recharts
+- **Ikony**: Lucide React
+- **Style**: CSS (Vanilla)
+
+## 📱 Responsywność
+
+Aplikacja jest w pełni responsywna:
+- Desktop: sidebar nawigacyjny
+- Mobile: hamburger menu z wysuwanym panelem
+
+## 🔐 Logowanie
+
+Na stronie głównej wybierz rolę i podaj dowolny login/hasło:
+- **Kontroler** → Panel kontrolera terenowego
+- **Biuro** → Panel administracyjny
+- **Sprzedawca** → Panel klienta
+
+---
+
+Autor: System Targowiska Miejskiego
