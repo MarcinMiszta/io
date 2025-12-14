@@ -1,0 +1,176 @@
+.home-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.home-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.home-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+}
+
+/* Role Selection */
+.role-selection {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.role-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 160px;
+}
+
+.role-button:hover {
+    transform: scale(1.02);
+}
+
+.role-icon {
+    padding: 14px;
+    border-radius: 50%;
+}
+
+.role-text {
+    text-align: center;
+}
+
+.role-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.role-desc {
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* Login Card */
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 28px;
+}
+
+.login-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.login-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0F172A;
+}
+
+.login-error {
+    padding: 12px;
+    background-color: #FEE2E2;
+    color: #DC2626;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 16px;
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+
+    .home-title {
+        font-size: 24px;
+    }
+
+    .home-subtitle {
+        font-size: 14px;
+    }
+
+    .role-selection {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .role-button {
+        flex-direction: row;
+        padding: 16px;
+        min-width: auto;
+        width: 100%;
+        gap: 16px;
+    }
+
+    .role-icon {
+        padding: 12px;
+        flex-shrink: 0;
+    }
+
+    .role-text {
+        text-align: left;
+        flex: 1;
+    }
+
+    .role-name {
+        font-size: 15px;
+    }
+
+    .role-desc {
+        font-size: 12px;
+    }
+
+    .login-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-header {
+        margin-bottom: 24px;
+    }
+
+    .home-title {
+        font-size: 20px;
+    }
+
+    .role-selection {
+        margin-bottom: 24px;
+    }
+
+    .role-button {
+        padding: 14px;
+    }
+
+    .role-icon {
+        padding: 10px;
+    }
+}

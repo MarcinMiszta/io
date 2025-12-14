@@ -1,0 +1,252 @@
+/* Responsive Layout Styles */
+
+/* Desktop Sidebar */
+.layout-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.layout-sidebar {
+    width: 256px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.layout-main {
+    flex: 1;
+    overflow: auto;
+    padding: 32px;
+    background-color: #F8FAFC;
+}
+
+/* Mobile Header */
+.mobile-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background-color: inherit;
+    z-index: 100;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-header-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.mobile-menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile Overlay */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 150;
+}
+
+.mobile-overlay.active {
+    display: block;
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    z-index: 200;
+    transition: left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-sidebar.open {
+    left: 0;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+    .layout-sidebar {
+        display: none;
+    }
+
+    .mobile-header {
+        display: flex;
+    }
+
+    .layout-main {
+        padding: 16px;
+        padding-top: 72px;
+        /* Account for fixed header */
+    }
+
+    .layout-container {
+        flex-direction: column;
+    }
+}
+
+/* Content Responsive Styles */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 22px !important;
+    }
+
+    .page-subtitle {
+        font-size: 14px !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .flex-responsive {
+        flex-direction: column !important;
+    }
+
+    .map-container {
+        flex-direction: column !important;
+        height: auto !important;
+    }
+
+    .map-canvas {
+        width: 100% !important;
+        overflow-x: auto !important;
+    }
+
+    .map-sidebar {
+        width: 100% !important;
+    }
+}
+
+/* Nav item mobile styles */
+.nav-item-mobile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.15s;
+}
+
+.nav-item-mobile:hover,
+.nav-item-mobile.active {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.nav-item-mobile.active {
+    font-weight: 600;
+}
+
+/* Map Page Mobile Styles */
+.map-page-container {
+    display: flex;
+    gap: 24px;
+    height: calc(100vh - 180px);
+}
+
+.map-scroll-area {
+    flex: 1;
+    background-color: #E2E8F0;
+    border-radius: 12px;
+    overflow: auto;
+    padding: 8px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.map-canvas {
+    position: relative;
+    background-color: #F8FAFC;
+    border-radius: 8px;
+    border: 2px solid #CBD5E1;
+    min-width: 850px;
+    min-height: 700px;
+}
+
+.map-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+    .map-page-container {
+        flex-direction: column;
+        height: auto;
+        gap: 16px;
+    }
+
+    .map-scroll-area {
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+        max-height: 70vh;
+        padding: 4px;
+    }
+
+    .map-sidebar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .map-page-container {
+        gap: 12px;
+    }
+
+    .map-scroll-area {
+        max-height: 60vh;
+        border-radius: 8px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .page-title {
+        font-size: 22px !important;
+    }
+
+    .legend-items {
+        flex-wrap: wrap;
+        gap: 8px !important;
+    }
+
+    .legend-items>div {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-scroll-area {
+        max-height: 55vh;
+    }
+
+    .layout-main {
+        padding: 12px;
+        padding-top: 68px;
+    }
+}
