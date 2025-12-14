@@ -13,7 +13,7 @@ System zarządzania targowiskiem miejskim z trzema panelami użytkowników: Biur
 
 ```bash
 # 1. Sklonuj repozytorium
-git clone https://github.com/twoj-username/targowisko-miejskie.git
+git clone https://github.com/MarcinMiszta/io.git
 
 # 2. Przejdź do folderu projektu
 cd targowisko-miejskie
